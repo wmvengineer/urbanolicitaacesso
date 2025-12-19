@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Impede barra de rolagem dupla */
+            overflow: hidden; 
             background-color: #ffffff;
         }
 
@@ -19,17 +19,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* O SEGREDO: Corta o que passar do tamanho */
+            overflow: hidden; 
         }
 
         iframe {
             width: 100%;
-            /* AQUI ESTÁ A MÁGICA: */
-            /* Definimos a altura como 100% da tela + 60px extras */
+            /* A altura extra para cortar o rodapé do Streamlit */
             height: calc(100% + 60px); 
             border: none;
-            
-            /* Garante que comece do topo */
             position: absolute;
             top: 0;
             left: 0;
@@ -38,11 +35,8 @@
 </head>
 <body>
     <div class="guilhotina">
-        <!-- Seu link com embed=true -->
-        <iframe src="https://urbanolicita.streamlit.app/"></iframe>
+        <!-- O parâmetro ?embed=true é OBRIGATÓRIO para iframes -->
+        <iframe src="https://urbanolicita.streamlit.app/?embed=true"></iframe>
     </div>
 </body>
-
 </html>
-
-
